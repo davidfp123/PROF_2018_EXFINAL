@@ -4,17 +4,17 @@ package es.upm.grise.profundizacion2018.examenFinal;
 
 public class Greeting {
 	
-	public String getGreeting( Language language,MyCalendar mc ) {
+	public String getGreeting(Language language,MyCalendar mc,Message msg) {
 		// Get current hour
 		int hour = mc.getHour();
 		
 		// Find out the greeting language
 		if ( language == null )
-			language = Message.getDefaultLanguage();
+			language = msg.getDefaultLanguage();
 		
 		// Get the moment of the day
 		TimeOfTheDay moment;
-		System.out.println(hour);
+		
 		if( hour < 12 ) 
 			moment = TimeOfTheDay.MORNING;
 		else if ( hour < 18 )
@@ -23,7 +23,7 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
-		return Message.getMessage( moment, language );
+		return msg.getMessage( moment, language );
 	}
 
 }

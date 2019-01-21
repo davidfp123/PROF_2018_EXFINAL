@@ -2,11 +2,11 @@ package es.upm.grise.profundizacion2018.examenFinal;
 
 public class Message {
 
-	public static Language getDefaultLanguage() {
+	public Language getDefaultLanguage() {
 		return Language.ENGLISH;
 	}
 
-	public static String getMessage( TimeOfTheDay moment, Language language ) {
+	public String getMessage( TimeOfTheDay moment, Language language ) {
 		
 		String message = "";
 		switch ( moment ) {
@@ -21,7 +21,7 @@ public class Message {
 		return message;
 	}
 
-	private static String getMorningMessage( Language language ) {
+	private String getMorningMessage( Language language ) {
 		String message = "";
 		switch ( language ) {
 			case ENGLISH :	message = "Good morning";
