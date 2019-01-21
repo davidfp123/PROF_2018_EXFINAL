@@ -1,13 +1,12 @@
 package es.upm.grise.profundizacion2018.examenFinal;
 
-import java.util.Calendar;
+//import java.util.Calendar;
 
 public class Greeting {
 	
-	public String getGreeting( Language language ) {
+	public String getGreeting( Language language,MyCalendar mc ) {
 		// Get current hour
-		Calendar calendar = Calendar.getInstance();
-		int hour = calendar.get( Calendar.HOUR_OF_DAY );
+		int hour = mc.getHour();
 		
 		// Find out the greeting language
 		if ( language == null )
@@ -15,6 +14,7 @@ public class Greeting {
 		
 		// Get the moment of the day
 		TimeOfTheDay moment;
+		System.out.println(hour);
 		if( hour < 12 ) 
 			moment = TimeOfTheDay.MORNING;
 		else if ( hour < 18 )
